@@ -3,6 +3,9 @@ import CircularProgress from "@material-ui/core/CircularProgress";
 import Button from "@material-ui/core/Button";
 import CloudUploadIcon from "@material-ui/icons/CloudUpload";
 class ImageUpload extends Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
     return (
       <div style={{ marginTop: "10px" }}>
@@ -16,11 +19,11 @@ class ImageUpload extends Component {
               type="file"
               onChange={this.props.handleChange}
             />
-            Выбрать логотип клуба
+            {this.props.descr}
             <label htmlFor="raised-button-file">
               <Button
                 variant="outlined"
-                color="primary"
+                color="blueGrey"
                 component="span"
                 style={{ padding: "0px", marginLeft: "10px" }}
               >

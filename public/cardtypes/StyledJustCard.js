@@ -8,6 +8,7 @@ const StyledJustCard = styled.div`
   align-items: center;
   font-family: "Roboto Condensed", sans-serif;
   justify-content: center;
+  margin-top: 100px;
   .rating {
     display: inline-block;
     color: white;
@@ -66,7 +67,7 @@ const StyledJustCard = styled.div`
   }
   .nonram {
     margin-left: 50px;
-    background: url("../seasonBlack.png");
+    background: ${props => `url(${props.background})`};
     background-size: 250px auto;
     background-repeat: no-repeat;
     height: 380px;

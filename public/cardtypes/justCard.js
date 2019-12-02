@@ -5,6 +5,7 @@ import Autocomplete from "@material-ui/lab/Autocomplete";
 import ImageUpload from "../../components/imgUploader";
 import storage from "../../Firebase/index";
 import Styled from "./StyledJustCard";
+import BackgroundChooser from "../../components/BackgroundChooser";
 
 function countryToFlag(isoCode) {
   return typeof String.fromCodePoint !== "undefined"
@@ -60,9 +61,10 @@ class justCard extends React.Component {
       }
     }
   };
+
   render() {
     return (
-      <Styled>
+      <Styled background={this.props.background}>
         <div className="ram">
           <div className="nonram">
             <p className={"rating"}>{this.props.rating}</p>
@@ -93,6 +95,26 @@ class justCard extends React.Component {
           </div>
         </div>
         <form className={"root"} noValidate autoComplete="off">
+          <BackgroundChooser
+            backBLACK={this.props.backBLACK}
+            backBPL_POTM={this.props.backBPL_POTM}
+            backChampions={this.props.backChampions}
+            backCL={this.props.backCL}
+            backFUTMAS={this.props.backFUTMAS}
+            backGOLD={this.props.backGOLD}
+            backHeadliner={this.props.backHeadliner}
+            backHERO={this.props.backHERO}
+            backICON={this.props.backICON}
+            backLive={this.props.backLive}
+            backMOTM={this.props.backMOTM}
+            backOTW={this.props.backOTW}
+            backPP={this.props.backPP}
+            backRB={this.props.backRB}
+            backSBC={this.props.backSBC}
+            backTOTS={this.props.backTOTS}
+            backTOTW={this.props.backTOTW}
+            backTOTY={this.props.backTOTY}
+          ></BackgroundChooser>
           <div>
             <TextField
               id="filled-basic"
@@ -153,11 +175,20 @@ class justCard extends React.Component {
               )}
             />
           </div>
-
+          <div>
+            <TextField
+              className="field"
+              id="standard-basic"
+              label="Название клуба"
+              onChange={this.props.clubName}
+              fullWidth
+            />
+          </div>
           <ImageUpload
             handleChange={this.handleChange}
             progress={this.state.progress}
             url={this.state.url}
+            descr={"Загрузить логотип"}
           ></ImageUpload>
           <div>
             <TextField

@@ -15,6 +15,7 @@ import HomeIcon from "@material-ui/icons/Home";
 import SettingsIcon from "@material-ui/icons/Settings";
 import LiveHelpIcon from "@material-ui/icons/LiveHelp";
 import Link from "next/link";
+import Logo from "../public/exportLogo";
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
@@ -30,7 +31,7 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1,
     display: "none",
     [theme.breakpoints.up("sm")]: {
-      display: "block"
+      display: "inline-block"
     },
     fontSize: "24px"
   },
@@ -38,7 +39,7 @@ const useStyles = makeStyles(theme => ({
     width: "100%",
     margin: "0px",
     padding: "0px",
-    background: "#204764"
+    background: "black"
   },
   Shop: {
     fontSize: "30px"
@@ -51,6 +52,11 @@ const useStyles = makeStyles(theme => ({
   },
   fullList: {
     width: "auto"
+  },
+  toolbar: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between"
   }
 }));
 
@@ -80,36 +86,36 @@ function Nav() {
     >
       <List>
         <Link href="/">
-          <ListItem button key="Главная">
-            <a style={{ textDecoration: "none" }}>
+          <a style={{ textDecoration: "none", color: "inherit" }}>
+            <ListItem button key="Главная">
               <ListItemIcon>
                 <HomeIcon></HomeIcon>
-                <ListItemText primary={"Главная"}></ListItemText>
               </ListItemIcon>
-            </a>
-          </ListItem>
+              <ListItemText primary={"Главная"}></ListItemText>
+            </ListItem>
+          </a>
         </Link>
-        <Link href="/cards">
-          <ListItem button key="Создать карточку">
-            <a style={{ textDecoration: "none" }}>
+        <Link href="/cardConstructor">
+          <a style={{ textDecoration: "none", color: "inherit" }}>
+            <ListItem button key="Создать карточку">
               <ListItemIcon>
                 <SettingsIcon></SettingsIcon>
-                <ListItemText primary={"Создать карточку"}></ListItemText>
               </ListItemIcon>
-            </a>
-          </ListItem>
+              <ListItemText primary={"Создать карточку"}></ListItemText>
+            </ListItem>
+          </a>
         </Link>
         <ListItem button key="Корзина">
           <ListItemIcon>
             <ShoppingBasketIcon></ShoppingBasketIcon>
-            <ListItemText primary={"Корзина"}></ListItemText>
           </ListItemIcon>
+          <ListItemText primary={"Корзина"}></ListItemText>
         </ListItem>
         <ListItem button key="FAQ">
           <ListItemIcon>
             <LiveHelpIcon></LiveHelpIcon>
-            <ListItemText primary={"FAQ"}></ListItemText>
           </ListItemIcon>
+          <ListItemText primary={"FAQ"}></ListItemText>
         </ListItem>
       </List>
     </div>
@@ -117,8 +123,8 @@ function Nav() {
 
   return (
     <div className={classes.root}>
-      <AppBar className={classes.AppBar} position="static">
-        <Toolbar>
+      <AppBar className={classes.AppBar} position="fixed">
+        <Toolbar className={classes.toolbar}>
           <IconButton
             edge="start"
             className={classes.menuButton}
@@ -131,9 +137,8 @@ function Nav() {
           <Drawer open={state.left} onClose={toggleDrawer("left", false)}>
             {sideList("left")}
           </Drawer>
-          <Typography className={classes.title} variant="h6" noWrap>
-            FootGift
-          </Typography>
+
+          <Logo></Logo>
           <IconButton className={classes.menuButton} color={"inherit"}>
             <div className={classes.searchIcon}>
               <ShoppingBasketIcon className={classes.Shop}></ShoppingBasketIcon>
