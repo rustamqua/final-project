@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { useState } from "react";
 const StyledBack = styled.div`
   margin: 0px;
+  cursor: pointer;
   img {
     width: 50px;
     height: 50px;

@@ -14,16 +14,15 @@ class ImageUpload extends Component {
             <input
               accept="image/*"
               style={{ display: "none" }}
-              id="raised-button-file"
-              multiple
+              id={this.props.label}
               type="file"
               onChange={this.props.handleChange}
             />
             {this.props.descr}
-            <label htmlFor="raised-button-file">
+            <label htmlFor={this.props.label}>
               <Button
-                variant="outlined"
-                color="blueGrey"
+                variant="contained"
+                color="secondary"
                 component="span"
                 style={{ padding: "0px", marginLeft: "10px" }}
               >

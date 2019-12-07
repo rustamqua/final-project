@@ -6,7 +6,12 @@ import ImageUpload from "../../components/imgUploader";
 import storage from "../../Firebase/index";
 import Styled from "./StyledJustCard";
 import BackgroundChooser from "../../components/BackgroundChooser";
-
+import HelpIcon from "@material-ui/icons/Help";
+import Tooltip from "@material-ui/core/Tooltip";
+import { Button, IconButton } from "@material-ui/core";
+import { flexbox } from "@material-ui/system";
+import Select from "@material-ui/core/Select";
+import MenuItem from "@material-ui/core/MenuItem";
 function countryToFlag(isoCode) {
   return typeof String.fromCodePoint !== "undefined"
     ? isoCode
@@ -24,16 +29,20 @@ class justCard extends React.Component {
       image: null,
       url:
         "http://pngimg.com/uploads/manchester_united/manchester_united_PNG18.png",
-      progress: 0
+      progress: 0,
+      image2: null,
+      url2: "",
+      progress2: 0,
+      imageName: ""
     };
   }
   handleChange = e => {
     if (e.target.files[0]) {
-      const image = e.target.files[0];
-      this.setState(() => ({ image }));
+      const image2 = e.target.files[0];
+      this.setState({ image: image2 });
 
-      if (image !== null) {
-        const uploadTask = storage.ref(`images/${image.name}`).put(image);
+      if (image2 !== null) {
+        const uploadTask = storage.ref(`images/${image2.name}`).put(image2);
         uploadTask.on(
           "state_changed",
           snapshot => {
@@ -41,7 +50,7 @@ class justCard extends React.Component {
             const progress = Math.round(
               (snapshot.bytesTransferred / snapshot.totalBytes) * 100
             );
-            this.setState({ progress });
+            this.setState({ progress: progress });
           },
           error => {
             // Error function ...
@@ -51,26 +60,75 @@ class justCard extends React.Component {
             // complete function ...
             storage
               .ref("images")
-              .child(image.name)
+              .child(image2.name)
               .getDownloadURL()
-              .then(url => {
-                this.setState({ url });
+              .then(url1 => {
+                this.setState({ url: url1 });
               });
           }
         );
+        console.log(this.state);
+      }
+    }
+  };
+  HandleChange = e => {
+    if (e.target.files[0]) {
+      const image23 = e.target.files[0];
+      this.setState({ image2: image23 });
+      this.setState({ imageName: image23.name });
+      if (image23 !== null) {
+        const uploadTask = storage.ref(`images2/${image23.name}`).put(image23);
+        uploadTask.on(
+          "state_changed",
+          snapshot => {
+            // progress function ...
+            const progress2 = Math.round(
+              (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+            );
+            this.setState({ progress2: progress2 });
+          },
+          error => {
+            // Error function ...
+            console.log(error);
+          },
+          () => {
+            // complete function ...
+            storage
+              .ref("images")
+              .child(image23.name)
+              .getDownloadURL()
+              .then(url2 => {
+                this.setState({ url2: url2 });
+              });
+          }
+        );
+        console.log(this.state);
       }
     }
   };
 
   render() {
+    let design;
+    if (this.state.url2 === "") {
+      design = "";
+    } else {
+      design = (
+        <div>
+          Ваше фото будет обработано профессиональным дизайнером, перед
+          помещением на карту
+        </div>
+      );
+    }
+
     return (
-      <Styled background={this.props.background}>
+      <Styled background={this.props.background} fcolor={this.props.fcolor}>
         <div className="ram">
           <div className="nonram">
             <p className={"rating"}>{this.props.rating}</p>
             <br></br>
             <p className={"position"}>{this.props.pos}</p>
             <br></br>
+
             <img
               className="country"
               src={`https://www.countryflags.io/${this.props.country}/flat/64.png`}
@@ -79,7 +137,7 @@ class justCard extends React.Component {
             <img className="club" src={this.state.url}></img>
             <br></br>
             <p className={"name"}>{this.props.name}</p>
-            <br></br>
+
             <div className="pacedri">
               <p className="char1">{this.props.pac} PAC</p>
               <p className="char2">{this.props.dri} DRI</p>
@@ -94,6 +152,11 @@ class justCard extends React.Component {
             </div>
           </div>
         </div>
+        <h4>
+          Это лишь предварительная версия карточки для подачи заявки.
+          Окончательная версия будет отредактирована дизайнером, и утверждена с
+          вами
+        </h4>
         <form className={"root"} noValidate autoComplete="off">
           <BackgroundChooser
             backBLACK={this.props.backBLACK}
@@ -118,7 +181,7 @@ class justCard extends React.Component {
           <div>
             <TextField
               id="filled-basic"
-              label="Rating"
+              label="Рейтинг"
               className="field"
               type="number"
               onInput={e => {
@@ -131,10 +194,30 @@ class justCard extends React.Component {
             <TextField
               className="field"
               id="standard-basic"
-              label="Position"
+              label="Позиция"
               inputProps={{ maxLength: 3 }}
               onChange={this.props.positionChange}
             />
+          </div>
+          <div style={{ margin: "auto" }}>
+            <Tooltip
+              title="CF - центральный форвард
+LW - левый вингер 
+RW - правый вингер 
+CAM - центральный атакующий полузащитник
+CM - центральный полузащитник
+CDM - центральный опорный полузащитник
+LM - левый полузащитник
+RM - правый полузащитник
+CB - центральный защитник
+LB - левый защитник 
+RB - правый защитник
+GK - вратарь"
+            >
+              <IconButton>
+                <HelpIcon></HelpIcon>
+              </IconButton>
+            </Tooltip>
           </div>
           <div>
             <TextField
@@ -142,7 +225,7 @@ class justCard extends React.Component {
               id="standard-basic"
               label="Имя"
               onChange={this.props.changename}
-              fullWidth
+              style={{ width: "250px" }}
             />
           </div>
           <div>
@@ -166,7 +249,7 @@ class justCard extends React.Component {
                 <TextField
                   {...params}
                   label="Выберите страну"
-                  fullWidth
+                  style={{ width: "250px" }}
                   inputProps={{
                     ...params.inputProps,
                     autoComplete: "disabled" // disable autocomplete and autofill
@@ -177,11 +260,11 @@ class justCard extends React.Component {
           </div>
           <div>
             <TextField
+              style={{ width: "250px" }}
               className="field"
               id="standard-basic"
               label="Название клуба"
               onChange={this.props.clubName}
-              fullWidth
             />
           </div>
           <ImageUpload
@@ -189,7 +272,23 @@ class justCard extends React.Component {
             progress={this.state.progress}
             url={this.state.url}
             descr={"Загрузить логотип"}
+            label="first"
           ></ImageUpload>
+          <div style={{ margin: "auto" }}>
+            <Tooltip
+              title="
+PAC - Скорость
+DRI - Дриблинг
+SHO - Удар
+DEF - Защита
+PAS - Передачи
+PHY - Физическая подготовка "
+            >
+              <IconButton>
+                <HelpIcon></HelpIcon>
+              </IconButton>
+            </Tooltip>
+          </div>
           <div>
             <TextField
               id="filled-basic"
@@ -216,6 +315,7 @@ class justCard extends React.Component {
               onChange={this.props.changedri}
             />
           </div>
+
           <div>
             <TextField
               id="filled-basic"
@@ -268,7 +368,33 @@ class justCard extends React.Component {
               onChange={this.props.changephy}
             />
           </div>
+          <ImageUpload
+            handleChange={this.HandleChange}
+            progress={this.state.progress2}
+            url={this.state.url2}
+            descr={"Загрузить Фото"}
+            label="second"
+          ></ImageUpload>
         </form>
+        <div className="userPhoto">
+          {design}
+          <img src={this.state.url2}></img>
+        </div>
+        <TextField
+          className="field"
+          id="standard-basic"
+          label="Ваш телефон/email"
+          multiline
+          onChange={this.props.changephy}
+        />
+        <TextField
+          className="field"
+          id="standard-basic"
+          label="Способ связи"
+          multiline
+          style={{ marginLeft: "10px" }}
+          onChange={this.props.changephy}
+        />
       </Styled>
     );
   }

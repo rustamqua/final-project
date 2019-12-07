@@ -6,12 +6,15 @@ const Header = () => {
       <Head>
         <title>futstore</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+          href="https://fonts.googleapis.com/css?family=Fira+Sans+Extra+Condensed&display=swap"
+          rel="stylesheet"
+        ></link>
         <meta charSet="utf-8" />
         <link
           href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
           rel="stylesheet"
         />
-        >
       </Head>
       <style jsx global>{`
         body {

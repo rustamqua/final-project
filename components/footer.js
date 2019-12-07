@@ -26,7 +26,7 @@ const footer = () => {
   return (
     <Styled>
       <div>
-        <h2>FOOTGIFT</h2>
+        <h2>FUTSTORE</h2>
         <div className="media">
           <div>
             <InstagramIcon></InstagramIcon>

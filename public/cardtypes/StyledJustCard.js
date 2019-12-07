@@ -1,17 +1,24 @@
 import styled from "styled-components";
 const StyledJustCard = styled.div`
-  @import url("https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap");
+  @font-face {
+    font-family: "myfont";
+    src: url("../static/15775.otf");
+  }
+  font-family: "myfont", sans-serif;
   background-size: 100% 100%;
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: "Roboto Condensed", sans-serif;
+
   justify-content: center;
   margin-top: 100px;
+  input {
+    color: #333d58;
+  }
   .rating {
     display: inline-block;
-    color: white;
+    color: ${props => props.fcolor};
     font-size: 40px;
     margin-top: 40px;
     margin-left: 50px;
@@ -19,7 +26,7 @@ const StyledJustCard = styled.div`
   }
   .position {
     display: inline-block;
-    color: white;
+    color: ${props => props.fcolor};
     font-size: 22px;
     margin-left: 45px;
     margin-top: 0px;
@@ -36,11 +43,11 @@ const StyledJustCard = styled.div`
   .club {
     object-fit: cover;
     width: 40px;
+    height: 52px;
     margin-left: 45px;
-    margin-bottom: 0px;
   }
   .name {
-    color: white;
+    color: ${props => props.fcolor};
     display: flex;
     justify-content: center;
     margin-right: 50px;
@@ -53,13 +60,13 @@ const StyledJustCard = styled.div`
     justify-content: space-between;
     font-size: 18px;
     .char1 {
-      color: white;
+      color: ${props => props.fcolor};
       margin-left: 50px;
       margin-bottom: 0px;
       margin-top: 5px;
     }
     .char2 {
-      color: white;
+      color: ${props => props.fcolor};
       margin-right: 100px;
       margin-bottom: 0px;
       margin-top: 5px;
@@ -87,6 +94,25 @@ const StyledJustCard = styled.div`
   }
   .upload1 {
     margin-top: 100px;
+  }
+  .userPhoto {
+    margin-top: 20px;
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    img {
+      margin-top: 20px;
+      width: 45vw;
+      object-fit: cover;
+    }
+  }
+  h4 {
+    width: 50vw;
+    text-align: center;
+    color: #333d58;
   }
 `;
 export default StyledJustCard;
