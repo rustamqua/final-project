@@ -106,7 +106,6 @@ class justCard extends React.Component {
       }
     }
   };
-
   render() {
     let design;
     if (this.state.url2 === "") {
@@ -395,6 +394,53 @@ PHY - Физическая подготовка "
           style={{ marginLeft: "10px" }}
           onChange={this.props.changephy}
         />
+        <Button
+          onClick={() => {
+            if (localStorage.getItem("cards")) {
+              let temp = [...JSON.parse(localStorage.getItem("cards"))];
+              console.log(temp);
+              temp.push({
+                logoUrl: this.state.url,
+                photoUrl: this.state.url2,
+                background: this.props.background,
+                name: this.props.name,
+                position: this.props.pos,
+                rating: this.props.rating,
+                country: this.props.country,
+                pac: this.props.pac,
+                dri: this.props.dri,
+                sho: this.props.sho,
+                def: this.props.def,
+                pas: this.props.pas,
+                phy: this.props.phy
+              });
+              localStorage.setItem("cards", JSON.stringify(temp));
+            } else {
+              localStorage.setItem(
+                "cards",
+                JSON.stringify([
+                  {
+                    logoUrl: this.state.url,
+                    photoUrl: this.state.url2,
+                    background: this.props.background,
+                    name: this.props.name,
+                    position: this.props.pos,
+                    rating: this.props.rating,
+                    country: this.props.country,
+                    pac: this.props.pac,
+                    dri: this.props.dri,
+                    sho: this.props.sho,
+                    def: this.props.def,
+                    pas: this.props.pas,
+                    phy: this.props.phy
+                  }
+                ])
+              );
+            }
+          }}
+        >
+          Добавить в корзину
+        </Button>
       </Styled>
     );
   }

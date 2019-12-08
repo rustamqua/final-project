@@ -18,7 +18,7 @@ const Header = () => {
       </Head>
       <style jsx global>{`
         body {
-          background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+          background: white;
           margin: 0;
           padding: 0;
           width: 100%;

@@ -105,18 +105,16 @@ function Nav() {
             </ListItem>
           </a>
         </Link>
-        <ListItem button key="Корзина">
-          <ListItemIcon>
-            <ShoppingBasketIcon></ShoppingBasketIcon>
-          </ListItemIcon>
-          <ListItemText primary={"Корзина"}></ListItemText>
-        </ListItem>
-        <ListItem button key="FAQ">
-          <ListItemIcon>
-            <LiveHelpIcon></LiveHelpIcon>
-          </ListItemIcon>
-          <ListItemText primary={"FAQ"}></ListItemText>
-        </ListItem>
+        <Link href="/shopCart">
+          <a style={{ textDecoration: "none", color: "inherit" }}>
+            <ListItem button key="Корзина">
+              <ListItemIcon>
+                <ShoppingBasketIcon></ShoppingBasketIcon>
+              </ListItemIcon>
+              <ListItemText primary={"Корзина"}></ListItemText>
+            </ListItem>
+          </a>
+        </Link>
       </List>
     </div>
   );
