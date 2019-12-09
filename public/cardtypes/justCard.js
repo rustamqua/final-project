@@ -94,7 +94,7 @@ class justCard extends React.Component {
           () => {
             // complete function ...
             storage
-              .ref("images")
+              .ref("images2")
               .child(image23.name)
               .getDownloadURL()
               .then(url2 => {
