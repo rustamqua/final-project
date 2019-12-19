@@ -395,6 +395,9 @@ PHY - Физическая подготовка "
           onChange={this.props.changephy}
         />
         <Button
+          style={{ marginTop: "20px" }}
+          variant="contained"
+          color="secondary"
           onClick={() => {
             if (localStorage.getItem("cards")) {
               let temp = [...JSON.parse(localStorage.getItem("cards"))];

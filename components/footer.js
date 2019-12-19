@@ -18,7 +18,15 @@ const Styled = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+
     div {
+      margin-left: 20px;
+    }
+    @media (max-width: 500px) {
+      flex-direction: column;
+      div {
+        margin-top: 5px;
+      }
     }
   }
 `;
@@ -34,6 +42,11 @@ const footer = () => {
           <div>
             <FacebookIcon></FacebookIcon>
           </div>
+        </div>
+        <div className="media">
+          <div>+77772418771</div>
+          <div>Valikhanov str.84</div>
+          <div>fustore@gmail.com</div>
         </div>
       </div>
     </Styled>

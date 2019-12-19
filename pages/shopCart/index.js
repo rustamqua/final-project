@@ -3,7 +3,7 @@ import Header from "../../components/header";
 import Nav from "../../components/nav";
 import styled from "styled-components";
 import { Paper, Button, IconButton } from "@material-ui/core";
-
+import Footer from "../../components/footer";
 import DeleteIcon from "@material-ui/icons/Delete";
 const StyledCart = styled.div`
   margin-top: 100px;
@@ -29,6 +29,12 @@ const StyledCart = styled.div`
         display: inline-block;
         width: 50px;
         object-fit: cover;
+      }
+    }
+    @media (max-width: 500px) {
+      font-size: 14px;
+      img {
+        width: 100px;
       }
     }
   }
@@ -91,8 +97,11 @@ class ShopCart extends React.Component {
         <Nav></Nav>
         <StyledCart>
           <div>{content}</div>
-          <Button>Отправить Дизайнеру</Button>
+          <Button color="secondary" variant="contained">
+            Отправить Дизайнеру
+          </Button>
         </StyledCart>
+        <Footer></Footer>
       </>
     );
   }

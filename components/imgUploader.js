@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import Button from "@material-ui/core/Button";
 import CloudUploadIcon from "@material-ui/icons/CloudUpload";
+
 class ImageUpload extends Component {
   constructor(props) {
     super(props);

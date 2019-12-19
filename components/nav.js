@@ -16,6 +16,7 @@ import SettingsIcon from "@material-ui/icons/Settings";
 import LiveHelpIcon from "@material-ui/icons/LiveHelp";
 import Link from "next/link";
 import Logo from "../public/exportLogo";
+
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
@@ -39,7 +40,7 @@ const useStyles = makeStyles(theme => ({
     width: "100%",
     margin: "0px",
     padding: "0px",
-    background: "black"
+    background: "#00072d"
   },
   Shop: {
     fontSize: "30px"
@@ -135,13 +136,16 @@ function Nav() {
           <Drawer open={state.left} onClose={toggleDrawer("left", false)}>
             {sideList("left")}
           </Drawer>
-
           <Logo></Logo>
-          <IconButton className={classes.menuButton} color={"inherit"}>
-            <div className={classes.searchIcon}>
-              <ShoppingBasketIcon className={classes.Shop}></ShoppingBasketIcon>
-            </div>
-          </IconButton>
+          <Link href="/shopCart">
+            <IconButton className={classes.menuButton} color={"inherit"}>
+              <div className={classes.searchIcon}>
+                <ShoppingBasketIcon
+                  className={classes.Shop}
+                ></ShoppingBasketIcon>
+              </div>
+            </IconButton>
+          </Link>
         </Toolbar>
       </AppBar>
     </div>

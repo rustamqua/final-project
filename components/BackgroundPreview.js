@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { useState } from "react";
+
 const StyledBack = styled.div`
   margin: 0px;
   cursor: pointer;
@@ -11,6 +12,7 @@ const StyledBack = styled.div`
     margin-top: 5px;
   }
 `;
+
 const BackgroundPreview = props => {
   const [src, setSrc] = useState(props.image);
   return (
