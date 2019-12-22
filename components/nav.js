@@ -16,6 +16,7 @@ import SettingsIcon from "@material-ui/icons/Settings";
 import LiveHelpIcon from "@material-ui/icons/LiveHelp";
 import Link from "next/link";
 import Logo from "../public/exportLogo";
+import { Button } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -58,6 +59,20 @@ const useStyles = makeStyles(theme => ({
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between"
+  },
+  button: {
+    "&:hover": {
+      borderBottom: "3px solid white"
+    },
+    ["@media (max-width:780px)"]: {
+      display: "none"
+    }
+  },
+  buttoncreate: {
+    ["@media (max-width:780px)"]: {
+      // eslint-disable-line no-useless-computed-key
+      display: "none"
+    }
   }
 }));
 
@@ -106,6 +121,36 @@ function Nav() {
             </ListItem>
           </a>
         </Link>
+        <Link href="/catalog">
+          <a style={{ textDecoration: "none", color: "inherit" }}>
+            <ListItem button key="Каталог">
+              <ListItemIcon>
+                <SettingsIcon></SettingsIcon>
+              </ListItemIcon>
+              <ListItemText primary={"Каталог"}></ListItemText>
+            </ListItem>
+          </a>
+        </Link>
+        <Link href="/delivery">
+          <a style={{ textDecoration: "none", color: "inherit" }}>
+            <ListItem button key="Доставка">
+              <ListItemIcon>
+                <SettingsIcon></SettingsIcon>
+              </ListItemIcon>
+              <ListItemText primary={"Доставка"}></ListItemText>
+            </ListItem>
+          </a>
+        </Link>
+        <Link href="/faq">
+          <a style={{ textDecoration: "none", color: "inherit" }}>
+            <ListItem button key="FAQ">
+              <ListItemIcon>
+                <SettingsIcon></SettingsIcon>
+              </ListItemIcon>
+              <ListItemText primary={"FAQ"}></ListItemText>
+            </ListItem>
+          </a>
+        </Link>
         <Link href="/shopCart">
           <a style={{ textDecoration: "none", color: "inherit" }}>
             <ListItem button key="Корзина">
@@ -137,6 +182,38 @@ function Nav() {
             {sideList("left")}
           </Drawer>
           <Logo></Logo>
+          <Link href="/">
+            <Button color="inherit" className={classes.button}>
+              Главная
+            </Button>
+          </Link>
+          <Link href="/catalog">
+            <Button color="inherit" className={classes.button}>
+              КАТАЛОГ
+            </Button>
+          </Link>
+          <Link href="/delivery">
+            <Button color="inherit" className={classes.button}>
+              ДОСТАВКА
+            </Button>
+          </Link>
+          <Link href="/faq">
+            <Button color="inherit" className={classes.button}>
+              FAQ
+            </Button>
+          </Link>
+          <Button color="inherit" className={classes.button}>
+            КОНТАКТЫ
+          </Button>
+          <Link href="/cardConstructor">
+            <Button
+              variant="contained"
+              color="secondary"
+              className={classes.buttoncreate}
+            >
+              Создать карточку
+            </Button>
+          </Link>
           <Link href="/shopCart">
             <IconButton className={classes.menuButton} color={"inherit"}>
               <div className={classes.searchIcon}>

@@ -9,78 +9,48 @@ const StyledMainPage = styled.div`
 
   .banner {
     margin-top: 60px;
-    background: url("../static/maybefinal.png");
-    height: 100vh;
+    background: url("../static/firstblock.png");
+    min-height: 100vh;
     background-size: cover;
+    img {
+      width: 200px;
+      object-fit: cover;
+      display: none;
+    }
     div {
+      margin-left: 15%;
       display: flex;
-      flex-wrap: nowrap;
       flex-direction: column;
-      align-items: center;
-    }
-    h1 {
-      margin-top: 20vh;
-      margin-right: 30vw;
-      width: 50vw;
-      display: inline-block;
-      color: #001c55;
-    }
-    h2 {
-      margin-right: 30vw;
-      width: 50vw;
-      color: #00072d;
-      display: inline-block;
-    }
-    button {
-      margin-left: 10vw;
-    }
-    @media (min-width: 481px) and (max-width: 767px) {
       h1 {
+        margin-top: 30%;
+        color: rgb(204, 49, 94);
       }
       h2 {
-      }
-    }
-    @media (min-width: 768px) and (max-width: 1024px) {
-      h1 {
-      }
-      h2 {
-      }
-    }
-    @media (min-width: 100px) and (max-width: 480px) {
-      background: url("../static/maybefinal.png") 30% 30%;
-      h1 {
-        margin-right: 0px;
-        margin-top: 40px;
-        font-size: 20px;
-        text-align: center;
-      }
-      h2 {
-        margin-right: 0px;
-        font-size: 18px;
-        text-align: center;
+        color: white;
       }
       button {
-        font-size: 22px;
-        margin-left: 100px;
+        max-width: 200px;
       }
     }
-    @media (min-width: 1025px) and (max-width: 2000px) and (orientation: landscape) {
+    @media (max-width: 700px) {
+      background: url("../static/firstblock.png") 50% 50%;
+      button {
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
       h1 {
-        font-size: 60px;
+        text-align: center;
       }
-    }
-  }
-  .create {
-    font-size: 30px;
-    color: white;
-    background: rgb(246, 66, 92);
-    transition: 0.5s;
-    font-family: "myfont", sans-serif;
-
-    &:hover {
-      font-size: 34px;
-      opacity: 0.8;
-      background: red;
+      h2 {
+        text-align: center;
+      }
+      img {
+        display: inline-flex;
+      }
+      div {
+        margin: auto;
+        align-items: center;
+      }
     }
   }
   .descrflex {
@@ -90,11 +60,12 @@ const StyledMainPage = styled.div`
     align-items: center;
     color: #333d58;
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh;
     background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
 
     .descrchild {
     }
+
     h1 {
       font-size: 3vw;
       width: 40vw;
@@ -104,7 +75,7 @@ const StyledMainPage = styled.div`
       width: 40vw;
     }
     img {
-      width: 40vw;
+      width: 40%;
       margin-right: 40px;
       object-fit: contain;
       position: relative;
@@ -115,6 +86,9 @@ const StyledMainPage = styled.div`
     @media (min-width: 200px) and (max-width: 500px) {
       flex-direction: column;
       align-items: center;
+      button {
+        margin-left: 20%;
+      }
       h1 {
         font-size: 20px;
         width: 200px;
@@ -127,22 +101,91 @@ const StyledMainPage = styled.div`
       }
       img {
         margin-right: 0px;
+        width: 200px;
+      }
+    }
+  }
+
+  .banner2 {
+    min-height: 100vh;
+    background: url("../static/2block.png");
+    background-size: "cover";
+    div {
+      display: flex;
+      flex-direction: column;
+      margin-left: 5%;
+    }
+    h2 {
+      color: white;
+      font-size: 46px;
+    }
+    .question {
+      margin-top: 50%;
+    }
+    img {
+      width: 250px;
+      object-fit: cover;
+      display: none;
+    }
+    @media (max-width: 700px) {
+      .question {
+        margin-top: 30%;
+      }
+      div {
+        margin: auto;
+        align-items: center;
+      }
+      h2 {
+        text-align: center;
+        font-size: 24px;
+      }
+      img {
+        display: inline-flex;
+      }
+    }
+  }
+  .threephotos {
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+    .photocontainer {
+      display: flex;
+      flex-direction: column;
+      width: 30%;
+      margin-top: 10%;
+      align-items: center;
+      img {
+        margin-left: auto;
+        margin-right: auto;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    }
+    @media (max-width: 700px) {
+      flex-direction: column;
+      .photocontainer {
+        width: auto;
+        text-align: center;
       }
     }
   }
   .yourcard {
     background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
-
     color: #28324e;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
+    button {
+      margin-left: 50%;
+    }
     img {
-      position: relative;
-      margin-top: -2vh;
+      margin-top: 20px;
       margin-bottom: 20px;
-      width: 40vw;
+      width: 40%;
       object-fit: contain;
       border-radius: 20px;
     }
@@ -165,8 +208,11 @@ const StyledMainPage = styled.div`
         width: 200px;
       }
       img {
-        width: 60vw;
+        width: 200px;
         margin-left: 0px;
+      }
+      button {
+        margin-left: 20%;
       }
     }
   }
@@ -250,12 +296,24 @@ const StyledMainPage = styled.div`
       margin-top: 30px;
     }
   }
+  .paper {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+  }
   form {
     display: flex;
     justify-content: center;
-
+    align-items: center;
+    flex-direction: column;
+    input {
+      width: 200px;
+      margin-top: 20px;
+    }
     button {
       margin-left: 10px;
+      width: 100px;
     }
 
     @media (max-width: 500px) {
