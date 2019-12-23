@@ -9,7 +9,7 @@ const StyledMainPage = styled.div`
 
   .banner {
     margin-top: 60px;
-    background: url("https://res.cloudinary.com/dbz6kou6o/image/upload/q_10/v1577092471/firstblock_iupnfr.png");
+    background: url("https://res.cloudinary.com/dbz6kou6o/image/upload/c_scale,f_auto,q_auto,w_1366/v1577092471/firstblock_iupnfr.png");
     min-height: 100vh;
     background-size: cover;
     img {

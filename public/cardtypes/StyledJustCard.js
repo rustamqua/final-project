@@ -38,6 +38,7 @@ const StyledJustCard = styled.div`
     margin-top: 0px;
     margin-bottom: 0px;
     width: 40px;
+    height: 40px;
   }
   .club {
     object-fit: cover;
@@ -47,8 +48,7 @@ const StyledJustCard = styled.div`
   }
   .name {
     color: ${props => props.fcolor};
-    display: flex;
-    justify-content: center;
+    text-align: center;
     margin-right: 50px;
     font-size: 24px;
     margin-top: 0px;
