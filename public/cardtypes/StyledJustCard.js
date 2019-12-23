@@ -35,7 +35,7 @@ const StyledJustCard = styled.div`
     display: inline-block;
     object-fit: cover;
     margin-left: 45px;
-    margin-top: -1px;
+    margin-top: -2px;
     margin-bottom: 0px;
     width: 40px;
     height: 40px;
