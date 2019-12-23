@@ -41,6 +41,8 @@ const StyledJustCard = styled.div`
     height: 40px;
   }
   .club {
+    margin-top: -1px;
+    margin-bottom: 0px;
     object-fit: cover;
     width: 40px;
     height: 52px;
