@@ -9,7 +9,7 @@ const StyledMainPage = styled.div`
 
   .banner {
     margin-top: 60px;
-    background: url("../static/firstblock.png");
+    background: url("https://res.cloudinary.com/dbz6kou6o/image/upload/q_10/v1577092471/firstblock_iupnfr.png");
     min-height: 100vh;
     background-size: cover;
     img {
@@ -18,11 +18,11 @@ const StyledMainPage = styled.div`
       display: none;
     }
     div {
-      margin-left: 15%;
+      margin-left: 14%;
       display: flex;
       flex-direction: column;
       h1 {
-        margin-top: 30%;
+        margin-top: 20%;
         color: rgb(204, 49, 94);
       }
       h2 {
@@ -32,8 +32,12 @@ const StyledMainPage = styled.div`
         max-width: 200px;
       }
     }
-    @media (max-width: 700px) {
-      background: url("../static/firstblock.png") 50% 50%;
+
+    @media (max-width: 1300px) {
+      background: url("https://res.cloudinary.com/dbz6kou6o/image/upload/q_10/v1577092471/firstblock_iupnfr.png")
+        50% 50%;
+      background-size: cover;
+      background-repeat: no-repeat;
       button {
         margin-top: 20px;
         margin-bottom: 20px;
