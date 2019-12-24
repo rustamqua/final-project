@@ -17,7 +17,7 @@ const Catalog = () => {
           <Paper elevation="5">
             <div className="product">
               <div>
-                <img src="../static/first.png"></img>
+                <img src="../static/first_i.png"></img>
                 <p>5990тг.</p>
               </div>
               <div>
@@ -35,7 +35,7 @@ const Catalog = () => {
           <Paper elevation="5">
             <div className="product">
               <div>
-                <img src="../static/7SEV.png"></img>
+                <img src="../static/7SEV_i.png"></img>
                 <p>5990тг.</p>
               </div>
               <div>
@@ -53,7 +53,7 @@ const Catalog = () => {
           <Paper elevation="5">
             <div className="product">
               <div>
-                <img src="../static/7SEV.png"></img>
+                <img src="../static/7SEV_i.png"></img>
                 <p>5990тг.</p>
               </div>
               <div>

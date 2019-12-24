@@ -9,7 +9,7 @@ const StyledMainPage = styled.div`
 
   .banner {
     margin-top: 60px;
-    background: url("https://res.cloudinary.com/dbz6kou6o/image/upload/c_scale,f_auto,q_auto,w_1366/v1577092471/firstblock_iupnfr.png");
+    background: url("../static/firstblock_i.png");
     min-height: 100vh;
     background-size: cover;
     img {
@@ -34,8 +34,7 @@ const StyledMainPage = styled.div`
     }
 
     @media (max-width: 1300px) {
-      background: url("https://res.cloudinary.com/dbz6kou6o/image/upload/q_10/v1577092471/firstblock_iupnfr.png")
-        50% 50%;
+      background: url("../static/firstblock_i.png") 50% 50%;
       background-size: cover;
       background-repeat: no-repeat;
       button {
@@ -112,19 +111,23 @@ const StyledMainPage = styled.div`
 
   .banner2 {
     min-height: 100vh;
-    background: url("../static/2block.png");
+    background: url("../static/6_i.png");
     background-size: "cover";
     div {
       display: flex;
       flex-direction: column;
-      margin-left: 5%;
     }
     h2 {
+      margin-top: 20px;
       color: white;
       font-size: 46px;
+      text-align: center;
     }
     .question {
-      margin-top: 50%;
+    }
+    .answer {
+      margin-top: 200px;
+      background-color: rgba(254, 40, 71, 0.5);
     }
     img {
       width: 250px;
@@ -134,6 +137,9 @@ const StyledMainPage = styled.div`
     @media (max-width: 700px) {
       .question {
         margin-top: 30%;
+      }
+      .answer {
+        margin-top: 20px;
       }
       div {
         margin: auto;
@@ -157,13 +163,14 @@ const StyledMainPage = styled.div`
       display: flex;
       flex-direction: column;
       width: 30%;
-      margin-top: 10%;
+      margin-top: 100px;
       align-items: center;
+      text-align: center;
       img {
         margin-left: auto;
         margin-right: auto;
-        width: 200px;
-        height: 200px;
+        width: 300px;
+        height: 300px;
         border-radius: 50%;
         object-fit: cover;
       }
@@ -293,7 +300,7 @@ const StyledMainPage = styled.div`
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px;
-
+    text-align: center;
     @media (max-width: 500px) {
       font-size: 22px;
       width: 70vw;

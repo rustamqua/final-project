@@ -17,7 +17,8 @@ import LiveHelpIcon from "@material-ui/icons/LiveHelp";
 import Link from "next/link";
 import Logo from "../public/exportLogo";
 import { Button } from "@material-ui/core";
-
+import LocalShippingIcon from "@material-ui/icons/LocalShipping";
+import StorefrontIcon from "@material-ui/icons/Storefront";
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
@@ -62,7 +63,8 @@ const useStyles = makeStyles(theme => ({
   },
   button: {
     "&:hover": {
-      borderBottom: "3px solid white"
+      borderBottom: "3px solid white",
+      borderRadius: "0px"
     },
     ["@media (max-width:780px)"]: {
       display: "none"
@@ -125,7 +127,7 @@ function Nav() {
           <a style={{ textDecoration: "none", color: "inherit" }}>
             <ListItem button key="Каталог">
               <ListItemIcon>
-                <SettingsIcon></SettingsIcon>
+                <StorefrontIcon></StorefrontIcon>
               </ListItemIcon>
               <ListItemText primary={"Каталог"}></ListItemText>
             </ListItem>
@@ -135,7 +137,7 @@ function Nav() {
           <a style={{ textDecoration: "none", color: "inherit" }}>
             <ListItem button key="Доставка">
               <ListItemIcon>
-                <SettingsIcon></SettingsIcon>
+                <LocalShippingIcon></LocalShippingIcon>
               </ListItemIcon>
               <ListItemText primary={"Доставка"}></ListItemText>
             </ListItem>
@@ -145,7 +147,7 @@ function Nav() {
           <a style={{ textDecoration: "none", color: "inherit" }}>
             <ListItem button key="FAQ">
               <ListItemIcon>
-                <SettingsIcon></SettingsIcon>
+                <LiveHelpIcon></LiveHelpIcon>
               </ListItemIcon>
               <ListItemText primary={"FAQ"}></ListItemText>
             </ListItem>
@@ -202,9 +204,11 @@ function Nav() {
               FAQ
             </Button>
           </Link>
-          <Button color="inherit" className={classes.button}>
-            КОНТАКТЫ
-          </Button>
+          <Link href="/#contact">
+            <Button color="inherit" className={classes.button}>
+              КОНТАКТЫ
+            </Button>
+          </Link>
           <Link href="/cardConstructor">
             <Button
               variant="contained"

@@ -12,7 +12,6 @@ import {
   MenuItem
 } from "@material-ui/core";
 import Link from "next/link";
-import TitlebarGridList from "./Carousel";
 import PhoneIcon from "@material-ui/icons/Phone";
 import RoomIcon from "@material-ui/icons/Room";
 import EmailIcon from "@material-ui/icons/Email";
@@ -53,7 +52,7 @@ const forlogo = () => {
               ВИДЕ РЕДКОЙ КАРТОЧКИ FIFA?
             </h2>
             <h2>ПОПРОБУЙ СОЗДАТЬ СВОЮ ПЕРСОНАЛЬНУЮ ULTIMATE КАРТОЧКУ</h2>
-            <img src="../static/4.png"></img>
+            <img src="https://res.cloudinary.com/dbz6kou6o/image/upload/c_scale,q_auto,w_200/v1577206262/4_udhqer.png"></img>
             <Link href="/cardConstructor">
               <Button className="create" variant="contained" color="secondary">
                 <strong>Создать карточку</strong>
@@ -66,18 +65,20 @@ const forlogo = () => {
         <Container maxWidth="sm">
           <div>
             <h2 className="question">
-              ЧТО ТАКОЕ ПЕРСОНАЛЬНАЯ ULTIMATE КАРТОЧКА?
+              ПЕРСОНАЛЬНАЯ ФУТБОЛЬНАЯ КАРТОЧКА ЭТО ОТРАЖЕНИЕ СПОСОБНОСТЕЙ,
+              УМЕНИЙ, ТАЛАНТОВ И РЕЙТИНГА
             </h2>
             <h2 className="answer">
-              ЭТО ОТРАЖЕНИЕ УНИКАЛЬНЫХ СПОСОБНОСТЕЙ, ТАЛАНТОВ, УМЕНИЙ И РЕЙТИНГА
+              У НАС ВЫ МОЖЕТЕ ЗАКАЗАТЬ ЛИЧНУЮ КАРТОЧКУ С ВАШЕЙ ФОТОГРАФИЕЙ,
+              ЭМБЛЕМОЙ ВАШЕГО КЛУБА И ЛЮБЫМИ ПОКАЗАТЕЛЯМИ
             </h2>
-            <img src="../static/3.png"></img>
+            <img src="https://res.cloudinary.com/dbz6kou6o/image/upload/c_scale,q_auto,w_250/v1577208869/futgift/beka_gn8huw.png"></img>
           </div>
         </Container>
       </div>
       <div className="threephotos">
         <div className="photocontainer">
-          <img src="../static/firstland.jpg"></img>
+          <img src="../static/firstland_i.jpg"></img>
           <h3>БУДЬ КРЕАТИВНЕЕ</h3>
           <p>
             ПОМИМО ФУТБОЛЬНЫХ, МЫ ДЕЛАЕМ И ИНДИВИДУАЛЬНЫЕ КАРТОЧКИ С ВАШИМ
@@ -85,11 +86,11 @@ const forlogo = () => {
           </p>
         </div>
         <div className="photocontainer">
-          <img src="../static/yo.png"></img>
+          <img src="../static/yo_i.png"></img>
           <h3>СТАНЬ БЛИЖЕ К СВОИМ КУМИРАМ</h3>
         </div>
         <div className="photocontainer">
-          <img src="../static/pair.jpg"></img>
+          <img src="https://res.cloudinary.com/dbz6kou6o/image/upload/q_auto/v1577216604/pair_kuwluo.jpg"></img>
           <h3>УДИВИ СВОЕГО ПАРНЯ</h3>
           <p style={{ textTransform: "uppercase" }}>
             Подари своему парню футболисту лучший подарок - закажи ему карту!
@@ -97,20 +98,22 @@ const forlogo = () => {
         </div>
       </div>
       <div className="descrflex">
-        <img src="../static/DDD.png"></img>
+        <img src="../static/DDD_i.png"></img>
         <div className="descrchild">
           <h1 className={"animated fadeInLeft"}>
             ИЗ ЧЕГО СДЕЛАНА КАРТОЧКА? Основа из дерева 10мм + прозрачный пластик
             + цветная печать карточки = твоя качественная и прочная карточка
           </h1>
           <h2>Есть вопрос ? Загляни в FAQ</h2>
-          <Button variant="contained" color="primary">
-            ВОПРОС-ОТВЕТ
-          </Button>
+          <Link href="/faq">
+            <Button variant="contained" color="primary">
+              ВОПРОС-ОТВЕТ
+            </Button>
+          </Link>
         </div>
       </div>
       <div className="yourcard">
-        <img src="../static/yourcard.jpg"></img>
+        <img src="https://res.cloudinary.com/dbz6kou6o/image/upload/c_scale,q_auto,w_600/v1577217561/yourcard_gfdw1b.jpg"></img>
         <div className="descrchild">
           <h2>ПРИОБРЕТАЙ ULTIMATE КАРТОЧКУ СЕГОДНЯ</h2>
           <h2>
@@ -122,7 +125,7 @@ const forlogo = () => {
           </Button>
         </div>
       </div>
-      <div className="contact">
+      <div className="contact" id="contact">
         <div className="items1">
           <div>
             <PhoneIcon fontSize="large"></PhoneIcon>

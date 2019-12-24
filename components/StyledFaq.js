@@ -3,8 +3,7 @@ const StyledFaq = styled.div`
   margin-top: 60px;
   .section {
     height: 25vh;
-    background: url("../static/2block.png");
-    background-attachment: fixed;
+    background: rgb(255, 90, 103);
     display: flex;
     justify-content: center;
     align-items: center;
