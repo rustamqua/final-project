@@ -51,8 +51,9 @@ const forlogo = () => {
               РЕАЛИЗОВАТЬ ТВОИ ЛУЧШИЕ КАЧЕСТВА В НАВЫКАХ ФУТБОЛА И НЕ ТОЛЬКО В
               ВИДЕ РЕДКОЙ КАРТОЧКИ FIFA?
             </h2>
-            <h2>ПОПРОБУЙ СОЗДАТЬ СВОЮ ПЕРСОНАЛЬНУЮ ULTIMATE КАРТОЧКУ</h2>
-            <img src="https://res.cloudinary.com/dbz6kou6o/image/upload/c_scale,q_auto,w_200/v1577206262/4_udhqer.png"></img>
+            <h2 className="bottomh2">
+              ПОПРОБУЙ СОЗДАТЬ СВОЮ ПЕРСОНАЛЬНУЮ ULTIMATE КАРТОЧКУ
+            </h2>
             <Link href="/cardConstructor">
               <Button className="create" variant="contained" color="secondary">
                 <strong>Создать карточку</strong>
@@ -72,13 +73,12 @@ const forlogo = () => {
               У НАС ВЫ МОЖЕТЕ ЗАКАЗАТЬ ЛИЧНУЮ КАРТОЧКУ С ВАШЕЙ ФОТОГРАФИЕЙ,
               ЭМБЛЕМОЙ ВАШЕГО КЛУБА И ЛЮБЫМИ ПОКАЗАТЕЛЯМИ
             </h2>
-            <img src="https://res.cloudinary.com/dbz6kou6o/image/upload/c_scale,q_auto,w_250/v1577208869/futgift/beka_gn8huw.png"></img>
           </div>
         </Container>
       </div>
       <div className="threephotos">
         <div className="photocontainer">
-          <img src="../static/firstland_i.jpg"></img>
+          <img src="https://res.cloudinary.com/dbz6kou6o/image/upload/c_scale,q_auto,w_300/v1577215928/futgift/firstland_ovo5ti.jpg"></img>
           <h3>БУДЬ КРЕАТИВНЕЕ</h3>
           <p>
             ПОМИМО ФУТБОЛЬНЫХ, МЫ ДЕЛАЕМ И ИНДИВИДУАЛЬНЫЕ КАРТОЧКИ С ВАШИМ
@@ -86,7 +86,7 @@ const forlogo = () => {
           </p>
         </div>
         <div className="photocontainer">
-          <img src="../static/yo_i.png"></img>
+          <img src="https://res.cloudinary.com/dbz6kou6o/image/upload/c_scale,q_auto,w_300/v1577216329/yo_v7ngn4.png"></img>
           <h3>СТАНЬ БЛИЖЕ К СВОИМ КУМИРАМ</h3>
         </div>
         <div className="photocontainer">
@@ -120,9 +120,11 @@ const forlogo = () => {
             Фанаты футбола по всему миру уже давно приобрели такие же карточки,
             а ты все еще думаешь?
           </h2>
-          <Button variant="contained" color="primary">
-            За покупками
-          </Button>
+          <Link href="/catalog">
+            <Button variant="contained" color="primary">
+              За покупками
+            </Button>
+          </Link>
         </div>
       </div>
       <div className="contact" id="contact">
