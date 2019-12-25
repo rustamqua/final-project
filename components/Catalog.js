@@ -1,6 +1,13 @@
 import React from "react";
 import StyledCatalog from "./StyledCatalog";
 import { Button, Paper } from "@material-ui/core";
+import Link from "next/link";
+const setDesign = () => {
+  localStorage.setItem("Design", JSON.stringify("designcard1"));
+};
+const setUltimate = () => {
+  localStorage.setItem("Ultimate", JSON.stringify("ultimatecard"));
+};
 const Catalog = () => {
   return (
     <StyledCatalog>
@@ -26,9 +33,11 @@ const Catalog = () => {
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                   Nunc scelerisque viverra mauris in aliquam sem fringilla ut.
                 </p>
-                <Button variant="contained" color="secondary">
-                  СОЗДАТЬ
-                </Button>
+                <Link href="/cardConstructor">
+                  <Button variant="contained" color="secondary">
+                    СОЗДАТЬ
+                  </Button>
+                </Link>
               </div>
             </div>
           </Paper>
@@ -44,7 +53,11 @@ const Catalog = () => {
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                   Nunc scelerisque viverra mauris in aliquam sem fringilla ut.
                 </p>
-                <Button variant="contained" color="secondary">
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  onClick={setDesign}
+                >
                   В корзину
                 </Button>
               </div>
@@ -62,7 +75,11 @@ const Catalog = () => {
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                   Nunc scelerisque viverra mauris in aliquam sem fringilla ut.
                 </p>
-                <Button variant="contained" color="secondary">
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  onClick={setUltimate}
+                >
                   В корзину
                 </Button>
               </div>

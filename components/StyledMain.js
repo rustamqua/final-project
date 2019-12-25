@@ -33,7 +33,7 @@ const StyledMainPage = styled.div`
       }
     }
     @media (min-width: 200px) and (max-width: 590px) {
-      background: url("https://res.cloudinary.com/dbz6kou6o/image/upload/c_scale,q_100,w_590/v1577267825/futgift/banner1mob_cavaru.png")
+      background: url("https://res.cloudinary.com/dbz6kou6o/image/upload/c_scale,q_auto,w_590/v1577267825/futgift/banner1mob_cavaru.png")
         100% 100%;
       background-size: cover;
       flex-direction: column;

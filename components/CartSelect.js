@@ -30,14 +30,16 @@ export default function SimpleSelect(props) {
     console.log(event.target.value);
   };
   const Submit = () => {
-    const template = { name: props.name, phone: props.number, method: age };
+    const template = {
+      cards: props.cards,
+      ultimate: props.ultimate,
+      design: props.design,
+      name: props.name,
+      number: props.number,
+      method: age
+    };
     emailjs
-      .send(
-        "gmail",
-        "template_HFfnQkrT",
-        template,
-        "user_V40rPObUReDEbGm9pj6D0"
-      )
+      .send("gmail", "cardstemplate", template, "user_V40rPObUReDEbGm9pj6D0")
       .then(
         response => {
           console.log("SUCCESS!", response.status, response.text);
@@ -71,7 +73,7 @@ export default function SimpleSelect(props) {
         color="secondary"
         onClick={Submit}
       >
-        Связаться
+        Отправить дизайнеру
       </Button>
     </div>
   );

@@ -19,9 +19,13 @@ import emailjs from "emailjs-com";
 import StyledMainPage from "./StyledMain";
 import Select from "./Select";
 const forlogo = () => {
-  const [phoneEmail, setPhoneEmail] = useState({ email: "" });
+  const [phoneEmail, setPhoneEmail] = useState({ name: "" });
+  const [phoneNum, setNum] = useState({ num: "" });
   const PhoneEmail = e => {
-    setPhoneEmail({ email: e.target.value });
+    setPhoneEmail({ name: e.target.value });
+  };
+  const PhoneNumber = e => {
+    setNum({ num: e.target.value });
   };
   const Submit = () => {
     emailjs
@@ -153,12 +157,9 @@ const forlogo = () => {
           <TextField placeholder="Имя" onChange={PhoneEmail}></TextField>
           <TextField
             placeholder="Номер телефона"
-            onChange={PhoneEmail}
+            onChange={PhoneNumber}
           ></TextField>
-          <Select></Select>
-          <Button variant="contained" color="secondary" onClick={Submit}>
-            Связаться
-          </Button>
+          <Select number={phoneNum.num} name={phoneEmail.name}></Select>
         </form>
       </Paper>
     </StyledMainPage>

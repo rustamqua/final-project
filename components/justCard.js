@@ -33,7 +33,8 @@ class justCard extends React.Component {
       image2: null,
       url2: "",
       progress2: 0,
-      imageName: ""
+      imageName: "",
+      clubName: ""
     };
   }
   handleChange = e => {
@@ -263,7 +264,9 @@ GK - вратарь"
               className="field"
               id="standard-basic"
               label="Название клуба"
-              onChange={this.props.clubName}
+              onChange={e => {
+                this.setState({ clubName: e.target.value });
+              }}
             />
           </div>
           <ImageUpload
@@ -379,21 +382,7 @@ PHY - Физическая подготовка "
           {design}
           <img src={this.state.url2}></img>
         </div>
-        <TextField
-          className="field"
-          id="standard-basic"
-          label="Ваш телефон/email"
-          multiline
-          onChange={this.props.changephy}
-        />
-        <TextField
-          className="field"
-          id="standard-basic"
-          label="Способ связи"
-          multiline
-          style={{ marginLeft: "10px" }}
-          onChange={this.props.changephy}
-        />
+
         <Button
           style={{ marginTop: "20px" }}
           variant="contained"
@@ -410,6 +399,7 @@ PHY - Физическая подготовка "
                 position: this.props.pos,
                 rating: this.props.rating,
                 country: this.props.country,
+                clubName: this.state.clubName,
                 pac: this.props.pac,
                 dri: this.props.dri,
                 sho: this.props.sho,
@@ -430,6 +420,7 @@ PHY - Физическая подготовка "
                     position: this.props.pos,
                     rating: this.props.rating,
                     country: this.props.country,
+                    clubName: this.state.clubName,
                     pac: this.props.pac,
                     dri: this.props.dri,
                     sho: this.props.sho,
