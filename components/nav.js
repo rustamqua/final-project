@@ -42,7 +42,7 @@ const useStyles = makeStyles(theme => ({
     width: "100%",
     margin: "0px",
     padding: "0px",
-    background: "#00072d"
+    background: "rgb(0,7,43)"
   },
   Shop: {
     fontSize: "30px"

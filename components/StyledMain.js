@@ -219,6 +219,7 @@ const StyledMainPage = styled.div`
       .photocontainer {
         width: auto;
         text-align: center;
+        margin-bottom: 10px;
       }
     }
   }

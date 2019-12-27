@@ -7,8 +7,12 @@ const Header = () => {
         <title>futstore</title>
         <meta
           name="viewport"
-          content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
         ></meta>
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css"
+        />
         <link
           href="https://fonts.googleapis.com/css?family=Fira+Sans+Extra+Condensed&display=swap"
           rel="stylesheet"
