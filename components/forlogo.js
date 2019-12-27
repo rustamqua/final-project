@@ -159,7 +159,7 @@ const forlogo = () => {
         Хочешь заказать карту, или есть вопросы по сотрудничеству? Отправьте нам
         свою почту или номер телефона, и мы с вами свяжемся
       </h6>
-      <Paper elevation="10" className="paper wow fadeInUp">
+      <Paper elevation={10} className="paper wow fadeInUp">
         <form>
           <TextField placeholder="Имя" onChange={PhoneEmail}></TextField>
           <TextField

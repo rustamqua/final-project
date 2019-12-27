@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import styled from "styled-components";
 import TextField from "@material-ui/core/TextField";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import ImageUpload from "./imgUploader";
@@ -9,9 +8,9 @@ import BackgroundChooser from "./BackgroundChooser";
 import HelpIcon from "@material-ui/icons/Help";
 import Tooltip from "@material-ui/core/Tooltip";
 import { Button, IconButton } from "@material-ui/core";
-import { flexbox } from "@material-ui/system";
-import Select from "@material-ui/core/Select";
-import MenuItem from "@material-ui/core/MenuItem";
+import FormGroup from "@material-ui/core/FormGroup";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import Switch from "@material-ui/core/Switch";
 function countryToFlag(isoCode) {
   return typeof String.fromCodePoint !== "undefined"
     ? isoCode
@@ -26,6 +25,8 @@ class justCard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      russian: false,
+      words: ["PAC", "DRI", "SHO", "DEF", "PAS", "PHY"],
       image: null,
       url:
         "http://pngimg.com/uploads/manchester_united/manchester_united_PNG18.png",
@@ -139,16 +140,28 @@ class justCard extends React.Component {
             <p className={"name"}>{this.props.name}</p>
 
             <div className="pacedri">
-              <p className="char1">{this.props.pac} PAC</p>
-              <p className="char2">{this.props.dri} DRI</p>
+              <p className="char1">
+                {this.props.pac} {this.state.words[0]}
+              </p>
+              <p className="char2">
+                {this.props.dri} {this.state.words[1]}
+              </p>
             </div>
             <div className="pacedri">
-              <p className="char1">{this.props.sho} SHO</p>
-              <p className="char2">{this.props.def} DEF</p>
+              <p className="char1">
+                {this.props.sho} {this.state.words[2]}
+              </p>
+              <p className="char2">
+                {this.props.def} {this.state.words[3]}
+              </p>
             </div>
             <div className="pacedri">
-              <p className="char1">{this.props.pas} PAS</p>
-              <p className="char2">{this.props.phy} PHY</p>
+              <p className="char1">
+                {this.props.pas} {this.state.words[4]}
+              </p>
+              <p className="char2">
+                {this.props.phy} {this.state.words[5]}
+              </p>
             </div>
           </div>
         </div>
@@ -157,6 +170,29 @@ class justCard extends React.Component {
           Окончательная версия будет отредактирована дизайнером, и утверждена с
           вами
         </h4>
+        <FormGroup row>
+          <FormControlLabel
+            control={
+              <Switch
+                checked={this.state.russian}
+                onChange={e => {
+                  if (!this.state.russian) {
+                    this.setState({
+                      russian: e.target.checked,
+                      words: ["СКР", "ДРБ", "УДР", "ЗАЩ", "ПРД", "ФИЗ"]
+                    });
+                  } else {
+                    this.setState({
+                      russian: e.target.checked,
+                      words: ["PAC", "DRI", "SHO", "DEF", "PAS", "PHY"]
+                    });
+                  }
+                }}
+              ></Switch>
+            }
+            label="EN/RU"
+          ></FormControlLabel>
+        </FormGroup>
         <form className={"root"} noValidate autoComplete="off">
           <BackgroundChooser
             backBLACK={this.props.backBLACK}
@@ -294,7 +330,7 @@ PHY - Физическая подготовка "
           <div>
             <TextField
               id="filled-basic"
-              label="PAC"
+              label={this.state.words[0]}
               className="field"
               type="number"
               onInput={e => {
@@ -307,7 +343,7 @@ PHY - Физическая подготовка "
             <TextField
               className="field"
               id="standard-basic"
-              label="DRI"
+              label={this.state.words[1]}
               type="number"
               onInput={e => {
                 e.target.value = Math.max(0, parseInt(e.target.value))
@@ -321,7 +357,7 @@ PHY - Физическая подготовка "
           <div>
             <TextField
               id="filled-basic"
-              label="SHO"
+              label={this.state.words[2]}
               className="field"
               type="number"
               onInput={e => {
@@ -334,7 +370,7 @@ PHY - Физическая подготовка "
             <TextField
               className="field"
               id="standard-basic"
-              label="DEF"
+              label={this.state.words[3]}
               type="number"
               onInput={e => {
                 e.target.value = Math.max(0, parseInt(e.target.value))
@@ -347,7 +383,7 @@ PHY - Физическая подготовка "
           <div>
             <TextField
               id="filled-basic"
-              label="PAS"
+              label={this.state.words[4]}
               className="field"
               type="number"
               onInput={e => {
@@ -360,7 +396,7 @@ PHY - Физическая подготовка "
             <TextField
               className="field"
               id="standard-basic"
-              label="PHY"
+              label={this.state.words[5]}
               type="number"
               onInput={e => {
                 e.target.value = Math.max(0, parseInt(e.target.value))
@@ -396,6 +432,7 @@ PHY - Физическая подготовка "
                 photoUrl: this.state.url2,
                 background: this.props.background,
                 name: this.props.name,
+                russian: this.state.russian,
                 position: this.props.pos,
                 rating: this.props.rating,
                 country: this.props.country,
@@ -417,6 +454,7 @@ PHY - Физическая подготовка "
                     photoUrl: this.state.url2,
                     background: this.props.background,
                     name: this.props.name,
+                    russian: this.state.russian,
                     position: this.props.pos,
                     rating: this.props.rating,
                     country: this.props.country,
