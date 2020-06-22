@@ -5,7 +5,7 @@ import FacebookIcon from "@material-ui/icons/Facebook";
 const Styled = styled.div`
   margin-top: 100px;
   width: 100%;
-  background: rgb(165, 225, 247);
+  background: rgb(0,7,43);
   color: white;
   height: 300px;
   display: flex;
