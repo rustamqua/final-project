@@ -41,7 +41,7 @@ const Catalog = () => {
                 <img src="../static/7SEV_i.png"></img>
               </div>
               <p className="price">5990тг.</p>
-              <p className="productDescr">Создать персональную карточку</p>
+              <p className="productDescr">Заказать дизайнерскую карточку</p>
             </div>
             <Button variant="contained" color="secondary" onClick={setDesign}>
               В корзину
@@ -53,7 +53,7 @@ const Catalog = () => {
                 <img src="../static/7SEV_i.png"></img>
               </div>
               <p className="price">5990тг.</p>
-              <p className="productDescr">Создать персональную карточку</p>
+              <p className="productDescr">Заказать Ultimate team карточку</p>
             </div>
             <Button variant="contained" color="secondary" onClick={setUltimate}>
               В корзину
