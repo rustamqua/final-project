@@ -91,7 +91,6 @@ const StyledMainPage = styled.div`
     align-items: center;
     color: #333d58;
     justify-content: center;
-    min-height: 100vh;
     background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
 
     .descrchild {
@@ -106,7 +105,7 @@ const StyledMainPage = styled.div`
       width: 40vw;
     }
     img {
-      width: 40%;
+      width: 30%;
       margin-right: 40px;
       object-fit: contain;
       position: relative;
@@ -144,7 +143,6 @@ const StyledMainPage = styled.div`
   }
 
   .banner2 {
-    min-height: 100vh;
     background: url("../static/6_i.png") 50% 50%;
     background-size: cover;
     div {
@@ -195,16 +193,22 @@ const StyledMainPage = styled.div`
   }
   .threephotos {
     display: flex;
-    min-height: 100vh;
     justify-content: center;
     background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+    padding-top: 100px;
+    padding-bottom: 100px;
     .photocontainer {
+      transition: all .2s ease-in-out;
+        &:hover{
+          transform: scale(1.1);
+        } 
       display: flex;
       flex-direction: column;
       width: 30%;
-      margin-top: 100px;
+ 
       align-items: center;
       text-align: center;
+      font-size: 24px;
       img {
         margin-left: auto;
         margin-right: auto;
@@ -220,6 +224,10 @@ const StyledMainPage = styled.div`
         width: auto;
         text-align: center;
         margin-bottom: 10px;
+        font-size: 16px;
+      }
+      p{
+        margin: 20px
       }
     }
   }
@@ -229,7 +237,6 @@ const StyledMainPage = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
     button {
       margin-left: 50%;
     }
@@ -273,7 +280,6 @@ const StyledMainPage = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
 
     img {
       position: relative;

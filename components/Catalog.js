@@ -21,69 +21,43 @@ const Catalog = () => {
         </div>
 
         <div className="productWrapper">
-          <Paper elevation="5">
-            <div className="product">
-              <div>
+          <Paper elevation="5" className="product">
+            <div>
+              <div className="imgContainer">
                 <img src="../static/first_i.png"></img>
-                <p>5990тг.</p>
               </div>
-              <div>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Nunc scelerisque viverra mauris in aliquam sem fringilla ut.
-                </p>
-                <Link href="/cardConstructor">
-                  <Button variant="contained" color="secondary">
-                    СОЗДАТЬ
-                  </Button>
-                </Link>
-              </div>
+              <p className="price">5990тг.</p>
+              <p className="productDescr">Создать персональную карточку</p>
             </div>
+            <Link href="/cardConstructor">
+              <Button variant="contained" color="secondary">
+                СОЗДАТЬ
+              </Button>
+            </Link>
           </Paper>
-          <Paper elevation="5">
-            <div className="product">
-              <div>
+          <Paper elevation="5" className="product">
+            <div>
+              <div className="imgContainer">
                 <img src="../static/7SEV_i.png"></img>
-                <p>5990тг.</p>
               </div>
-              <div>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Nunc scelerisque viverra mauris in aliquam sem fringilla ut.
-                </p>
-                <Button
-                  variant="contained"
-                  color="secondary"
-                  onClick={setDesign}
-                >
-                  В корзину
-                </Button>
-              </div>
+              <p className="price">5990тг.</p>
+              <p className="productDescr">Создать персональную карточку</p>
             </div>
+            <Button variant="contained" color="secondary" onClick={setDesign}>
+              В корзину
+            </Button>
           </Paper>
-          <Paper elevation="5">
-            <div className="product">
-              <div>
+          <Paper elevation="5" className="product">
+            <div>
+              <div className="imgContainer">
                 <img src="../static/7SEV_i.png"></img>
-                <p>5990тг.</p>
               </div>
-              <div>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Nunc scelerisque viverra mauris in aliquam sem fringilla ut.
-                </p>
-                <Button
-                  variant="contained"
-                  color="secondary"
-                  onClick={setUltimate}
-                >
-                  В корзину
-                </Button>
-              </div>
+              <p className="price">5990тг.</p>
+              <p className="productDescr">Создать персональную карточку</p>
             </div>
+            <Button variant="contained" color="secondary" onClick={setUltimate}>
+              В корзину
+            </Button>
           </Paper>
         </div>
       </div>

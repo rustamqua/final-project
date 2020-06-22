@@ -96,6 +96,7 @@ const forlogo = () => {
         <div className="photocontainer wow fadeIn">
           <img src="https://res.cloudinary.com/dbz6kou6o/image/upload/c_scale,q_auto,w_300/v1577216329/yo_v7ngn4.png"></img>
           <h3>СТАНЬ БЛИЖЕ К СВОИМ КУМИРАМ</h3>
+          <p style = {{textTransform: 'uppercase'}}>Персональная футбольная карточка это отражение способностей, умений, талантов и рейтинга</p>
         </div>
         <div className="photocontainer wow fadeIn">
           <img src="https://res.cloudinary.com/dbz6kou6o/image/upload/q_auto/v1577216604/pair_kuwluo.jpg"></img>

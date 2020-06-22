@@ -46,7 +46,7 @@ const footer = () => {
         <div className="media">
           <div>+77772418771</div>
           <div>Valikhanov str.84</div>
-          <div>fustore@gmail.com</div>
+          <div>futstore@gmail.com</div>
         </div>
       </div>
     </Styled>
